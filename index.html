@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos Vinícius</title>
+    <link rel="stylesheet" href="./assets/css/variables.css">
+    <link rel="stylesheet" href="./assets/css/elements.css">
+    <link rel="stylesheet" href="./assets/css/classes.css">
+    <link rel="stylesheet" href="./assets/css/menu.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <input id="close-menu" class="close-menu" type="checkbox" aria-label="fechar menu" role="button">
+    <label class="close-menu-label" for="close-menu" title="close-menu"></label>
+
+    <aside class="menu white-bg">
+        <div class="main-content menu-content">
+            <h1 onclick="getElementById('close-menu').checked = false;">
+                <a href="#intro">MV</a>
+            </h1>
+
+            <nav>
+                <ul onclick="getElementById('close-menu').checked = false;">
+                    <li><a href="#intro">About Me</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#grid-one">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li> 
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="menu-spacing"></div>
+
+    <section id="intro" class="intro main-bg section">
+        <div class="main-content intro-content">
+            <div class="intro-text-content">
+                <h2>Sobre mim</h2>
+                <p>Olá a todos! Meu nome é Marcos Vinícius e atualmente estou estudando Ciência da Computação na UFCG, bem como Informática no IFPB. Tenho uma paixão profunda por programação e tecnologia. Minha jornada me levou a dominar linguagens como Java e Python, além de trabalhar com frameworks como Django e Spring Boot. Estou animado para conquistar minha primeira experiência como desenvolvedor de software e trazer soluções inovadoras para a indústria. Convido vocês a explorarem meu site para conhecerem mais sobre minha trajetória e os projetos que venho desenvolvendo. Agradeço imensamente pela visita e pelo interesse!
+                </p>
+            </div>
+            <div class="intro-img">
+                <img class="img-intro" src="./assets/img/campeao-rosto.jpg" alt="Foto de perfil">
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="white-bg section">
+        <div class="main-content education-content" >
+            <h2>Formação acadêmica</h2>
+            <h4>Graduação em Ciência da Computação</h4>
+                <p>Universidade Federal de Campina Grande (UFCG).<br>
+                Previsão de Conclusão: Entre o final de 2026 e o início de 2027.</p>
+                
+                <p>Estou atualmente cursando Ciência da Computação na UFCG, uma graduação que abrange diversas áreas da tecnologia da informação. Através desse programa, estou adquirindo conhecimentos em programação, algoritmos, inteligência artificial e desenvolvimento de software, entre outros. Minha previsão de conclusão está entre o final de 2026 e o início de 2027.</p>
+                
+            <h4>Curso Técnico em Informática</h4>
+                <p>Instituto Federal de Educação, Ciência e Tecnologia da Paraíba (IFPB) - Campus Soledade.<br>
+                Conclusão: Fim de 2024.</p>
+                
+                <p>Além disso, estou realizando um curso técnico em Informática no IFPB, localizado no Campus de Soledade, com término previsto para o final de 2024. Nesse curso, estou obtendo conhecimentos práticos em programação, redes de computadores e manutenção de hardware, que me proporcionarão uma base sólida para ingressar no mercado de trabalho ou continuar minha jornada acadêmica na área de tecnologia da informação.</p>
+        </div>
+    </section>
+
+    <section id="grid-one" class="grid-one main-bg section">
+        <div class="main-content grid-one-content">
+            <h2 class="grid-main-heading">Alguns Projetos</h2>
+            <p class="grid-description">Explore alguns dos meus projetos finalizados durante meus estudos</p>
+            <div class="grid">
+                <article>
+                    <h3><a href="https://heac.com.br/" target="_blank">HEAC</a></h3>
+                    <p>Sistema de Digitalização e Gerenciamento de Documentos desenvolvido em Django.
+                        O sistema já foi entregue ao cliente e no momento se encontra em produção.
+                    </p>
+                </article>
+                <article>
+                    <h3><a href="https://github.com/marcosfragoso/library-spring" target="_blank">Biblioteca</a></h3>
+                    <p>Sistema para fins de estudo de uma API de uma biblioteca utilizando Java, Spring Boot, JPA, Hibernate e um banco de dados simples H2 Console.</p>
+                </article>
+                <article>
+                    <h3><a href="https://github.com/marcosfragoso/generator_password" target="_blank">Gerador de senhas</a></h3>
+                    <p>Um gerador de senhas seguras criado durante meus estudos do framework Django.</p>
+                </article>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="skills" class="grid-one white-bg section">
+        <div class="main-content grid-one-content">
+            <h2 class="grid-main-heading skills">Skills</h2>
+            <div class="grid">
+                <div class="icons-svg">
+                    <img src="./assets/img/java.svg" alt="Icon Java">
+                </div>
+                <div class="icons-svg">
+                    <img src="./assets/img/python.svg" alt="Icon Python">
+                </div>
+                <div class="icons-svg">
+                    <img src="./assets/img/pgsql.svg" alt="Icon PostgreSQL">
+                </div>
+                <div class="icons-svg">
+                    <img src="./assets/img/html.svg" alt="Icon HTML">
+                </div>
+                <div class="icons-svg">
+                    <img src="./assets/img/css.svg" alt="Icon CSS">
+                </div>
+                <div class="icons-svg">
+                    <img src="./assets/img/js.svg" alt="Icon JS">
+                </div>
+                <div class="icons-svg">
+                    <img src="./assets/img/git.svg" alt="Icon Git">
+                </div>
+                <div class="icons-svg">
+                    <img src="./assets/img/spring.svg" alt="Icon Spring">
+                </div>
+                <div class="icons-svg">
+                    <img src="./assets/img/django.svg" alt="Icon Django">
+                </div>
+            </div>        
+        </div>
+    </section>
+
+    <footer id="footer" class="footer white-bg">
+        <div class="contact">
+            <p>Phone: +55 (83) 9 9982-4405</p>
+            <p>E-mail: marcos.vinicius.fragoso.oliveira@ccc.ufcg.edu.br</p>
+            <p>Soledade, Paraíba, Brazil</p>
+        </div>
+
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/marcosvfo_/" target="_blank">
+                <img class="contact-svg" src="./assets/img/insta.svg" alt="Meu instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/marcos-vinicius-fragoso-de-oliveira/" target="_blank">
+                <img class="contact-svg" src="./assets/img/linkedin.svg" alt="Meu Linkedin">
+            </a>
+            <a href="https://github.com/marcosfragoso" target="_blank">
+                <img class="contact-svg" src="./assets/img/github.svg" alt="Meu GitHub">
+            </a>
+        </div>    
+    </footer>
+    
+    
+</body>
+</html>
