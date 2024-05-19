@@ -1,3 +1,3 @@
 # Landing Page de um currículo
 
-https://marcosvinicius.netlify.app/
+[Acesse](https://marcosfragoso.github.io/web-curriculum/)
