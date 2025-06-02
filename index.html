@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcos Vinícius</title>
-    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Ícone -->
     <link rel="shortcut icon" href="./assets/img/logo.png" type="image/png">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Lineicons -->
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
             font-family: "Roboto Slab", serif;
@@ -59,28 +65,26 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-dark justify-content-end" style="font-size: 1.2rem;">
         <ul class="nav justify-content-center table-hover">
             <li class="nav-item">
-                <a class="nav-link text-white" href="#intro">About me</a>
+                <a class="nav-link text-white" href="#intro">Sobre mim</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#education">Education</a>
+              <a class="nav-link text-white" href="#education">Formação Acadêmica</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#grid-one">Projects</a>
+              <a class="nav-link text-white" href="#projects">Alguns projetos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#skills">Skills</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#footer">Contact</a>
+              <a class="nav-link text-white" href="#footer">Contato</a>
             </li>
         </ul>
     </nav>
-    <br>
+    
     <section id="intro">
         <div class="container">
-            <div class="pb-3 pt-3">
-                <h2 class="card-title text-center pb-2 pt-2 bg-dark text-white rounded">Sobre mim</h2>
-            </div>
+            <h2 class="card-title pb-5 pt-3 text-muted text-center">Sobre mim</h2>
             <div class="row">
                 <div class="col-8">
                     <p class="card-text text-justify">Sou Marcos Vinícius, graduando em Ciência da Computação pela Universidade Federal de Campina Grande (UFCG) e técnico em Informática pelo Instituto Federal da Paraíba (IFPB). Atuo como desenvolvedor de software, com experiência em desenvolvimento web full stack.
@@ -98,9 +102,7 @@ Possuo certificações em metodologias ágeis, como Scrum Fundamentals, além de
     <hr>
     <section id="education">
         <div class="container">
-            <div class="pb-3 pt-3">
-                <h2 class="card-title text-center pb-2 pt-2 bg-dark text-white rounded">Formação acadêmica</h2>
-            </div>
+            <h2 class="card-title pb-5 pt-3 text-muted text-center">Formação Acadêmica</h2>
             <div class="row">
               <div class="col-sm">
                 <div class="card border-0">
@@ -139,51 +141,98 @@ Possuo certificações em metodologias ágeis, como Scrum Fundamentals, além de
         </div>
     </section>
     <hr>
-    <section id="grid-one">
-        <div class="container">
-            <div class="pb-3 pt-3">
-                <h2 class="card-title text-center pb-2 pt-2 bg-dark text-white rounded">Alguns projetos</h2>
-            </div>
-            <div class="row">
-              <div class="col-sm">
-                <article>
-                    <h3><a class="text-dark" href="https://heac.com.br/" target="_blank">HEAC</a></h3>
-                    <p>Desenvolvido com o intuito de otimizar o gerenciamento de arquivos em empresas e prefeituras, este sistema visa facilitar tanto a gestão atual quanto as futuras demandas. A base do sistema foi construída utilizando Django para o back-end, oferecendo robustez e flexibilidade na manipulação de dados, enquanto o front-end foi implementado com Bootstrap, proporcionando uma interface amigável e responsiva. Além disso, o deploy foi realizado na Google Cloud Platform, garantindo escalabilidade e segurança para os dados armazenados.
-                    </p>
-                </article>
-              </div>
-              <div class="col-sm">
-                <article>
-                    <h3><a class="text-dark" href="https://github.com/marcosfragoso/suap-thymeleaf" target="_blank">SUAP do Sertão</a></h3>
-                    <p>
-                        Este projeto foi concebido como uma ferramenta de estudo para explorar e compreender o funcionamento de um sistema de gestão acadêmica inspirado no SUAP. Utilizando tecnologias como Java, Spring Boot, Spring Security, PostgreSQL, Thymeleaf, HTML, CSS e Bootstrap, o sistema oferece funcionalidades de autenticação e controle de acesso. A implementação visa proporcionar uma experiência prática no desenvolvimento de aplicações web completas, com foco na segurança e integração com banco de dados. A interface foi projetada com Thymeleaf e Bootstrap, criando um ambiente de aprendizado interativo e visualmente atraente.
-                    </p>
-                </article>
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-sm">
-                    <article>
-                        <h3><a class="text-dark" href="https://github.com/marcosfragoso/bank-api" target="_blank">API Bancária</a></h3>
-                        <p>
-                            Este projeto é uma API bancária desenvolvida em Java com Spring Boot, que simula operações essenciais como gerenciamento de contas, autenticação e movimentações financeiras. Utiliza Docker para containerização, Apache Kafka para comunicação assíncrona, além de JPA/Hibernate para persistência e Spring Security com JWT para segurança. O sistema conta com testes automatizados (JUnit e Mockito) e serve como uma ferramenta prática para o aprendizado e aplicação dos conceitos de desenvolvimento de APIs REST seguras e escaláveis no contexto financeiro.
-                    </article>
+
+    <section id="projects">
+        <div >
+            <h2 class="card-title pb-3 pt-3 text-muted text-center">Alguns Projetos</h2>
+            <div id="projectsCarousel" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel">
+                
+                <!-- Indicadores -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="3"></button>
                 </div>
-                <div class="col-sm">
-                    <article>
-                        <h3><a class="text-dark" href="https://github.com/marcosfragoso/barbersole" target="_blank">BarberSole App</a></h3>
-                        <p>Este projeto foi concebido como uma ferramenta de estudo para o desenvolvimento de um sistema de gestão para barbearias. Utilizando tecnologias como Java, Spring Boot, Spring Security, PostgreSQL, Thymeleaf, HTML, CSS, Bootstrap, Ajax e Highcharts, o sistema permite o gerenciamento de clientes, serviços e agendamentos. A interface foi desenvolvida com Thymeleaf e Bootstrap, proporcionando uma experiência de usuário amigável e responsiva. Com o uso de Ajax, o sistema oferece interatividade em tempo real, e os gráficos gerados pelo Highcharts fornecem visualizações detalhadas de dados, auxiliando na tomada de decisões.</p>
-                    </article>
-                  </div>
-              </div>
+
+                <!-- Slides -->
+                <div class="carousel-inner">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="p-5 rounded  w-75 mx-auto">
+                            <h3>
+                                <a class="text-decoration-none text-dark" href="https://heac.com.br/" target="_blank">
+                                    HEAC
+                                </a>
+                            </h3>
+                            <p>
+                                Desenvolvido com o intuito de otimizar o gerenciamento de arquivos em empresas e prefeituras, este sistema visa facilitar tanto a gestão atual quanto as futuras demandas. A base do sistema foi construída utilizando Django para o back-end, oferecendo robustez e flexibilidade na manipulação de dados, enquanto o front-end foi implementado com Bootstrap, proporcionando uma interface amigável e responsiva. Além disso, o deploy foi realizado na Google Cloud Platform, garantindo escalabilidade e segurança para os dados armazenados.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="p-5 rounded  w-75 mx-auto">
+                            <h3>
+                                <a class="text-decoration-none text-dark" href="https://github.com/marcosfragoso/bank-api" target="_blank">
+                                    API Bancária
+                                </a>
+                            </h3>
+                            <p>
+                                Este projeto é uma API bancária desenvolvida em Java com Spring Boot, que simula operações essenciais como gerenciamento de contas, autenticação e movimentações financeiras. Utiliza Docker para containerização, Apache Kafka para comunicação assíncrona, além de JPA/Hibernate para persistência e Spring Security com JWT para segurança. O sistema conta com testes automatizados (JUnit e Mockito) e serve como uma ferramenta prática para o aprendizado e aplicação dos conceitos de desenvolvimento de APIs REST seguras e escaláveis no contexto financeiro.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item">
+                        <div class="p-5 rounded  w-75 mx-auto">
+                            <h3>
+                                <a class="text-decoration-none text-dark" href="https://github.com/marcosfragoso/suap-thymeleaf" target="_blank">
+                                    SUAP do Sertão
+                                </a>
+                            </h3>
+                            <p>
+                                Este projeto foi concebido como uma ferramenta de estudo para explorar e compreender o funcionamento de um sistema de gestão acadêmica inspirado no SUAP. Utilizando tecnologias como Java, Spring Boot, Spring Security, PostgreSQL, Thymeleaf, HTML, CSS e Bootstrap, o sistema oferece funcionalidades de autenticação e controle de acesso. A implementação visa proporcionar uma experiência prática no desenvolvimento de aplicações web completas, com foco na segurança e integração com banco de dados. A interface foi projetada com Thymeleaf e Bootstrap, criando um ambiente de aprendizado interativo e visualmente atraente.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="carousel-item">
+                        <div class="p-5 rounded  w-75 mx-auto">
+                            <h3>
+                                <a class="text-decoration-none text-dark" href="https://github.com/marcosfragoso/barbersole" target="_blank">
+                                    BarberSole App
+                                </a>
+                            </h3>
+                            <p>
+                                Este projeto foi concebido como uma ferramenta de estudo para o desenvolvimento de um sistema de gestão para barbearias. Utilizando tecnologias como Java, Spring Boot, Spring Security, PostgreSQL, Thymeleaf, HTML, CSS, Bootstrap, Ajax e Highcharts, o sistema permite o gerenciamento de clientes, serviços e agendamentos. A interface foi desenvolvida com Thymeleaf e Bootstrap, proporcionando uma experiência de usuário amigável e responsiva. Com o uso de Ajax, o sistema oferece interatividade em tempo real, e os gráficos gerados pelo Highcharts fornecem visualizações detalhadas de dados, auxiliando na tomada de decisões.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Controles -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
         </div>
     </section>
+
+
+
     <hr>
     <section id="skills">
         <div class="container">
-            <div class="pb-3 pt-3">
-                <h2 class="card-title text-center pb-2 pt-2 bg-dark text-white rounded">Principais Skills</h2>
-            </div>
+            <h2 class="card-title text-center pb-5 pt-3 text-muted">Skills</h2>
             <div class="row pb-5">
               <div class="col-sm d-flex justify-content-center align-items-center">
                 <div class="icons-svg">
@@ -269,38 +318,39 @@ Possuo certificações em metodologias ágeis, como Scrum Fundamentals, além de
     </section>
 
     <footer id="footer" class="d-flex flex-column justify-content-center align-items-center py-3 my-4 border-top">
-    <div class="nav justify-content-center pb-2 pt-2">
-        <i class="lni lni-phone text-center align-center"></i>
-        <span class="text-center align-center pl-3">+55 (83) 9 9982-4405</span>
-    </div>
-    <div class="nav justify-content-center pb-2 pt-2">
-        <i class="lni lni-envelope text-center align-center"></i>
-        <span class="text-center align-center pl-3">marcos.vinicius.fragoso.oliveira@ccc.ufcg.edu.br</span>
-    </div>
-    <div class="nav justify-content-center pb-2 pt-2">
-        <i class="lni lni-map-marker text-center align-center"></i>
-        <span class="text-center align-center pl-3">Soledade, Paraíba, Brazil</span>
-    </div>
-    <ul class="nav justify-content-center list-unstyled d-flex pt-2">
-        <li class="ms-3 pl-2 pr-2">
-            <a href="https://www.instagram.com/marcosvfo_/" style="color: #E1306C;" target="_blank">
-                <i class="lni lni-instagram" style="font-size: xx-large;"></i>
-            </a>
-        </li>
-        <li class="ms-3 pl-2 pr-2">
-            <a href="https://www.linkedin.com/in/marcos-vinicius-fragoso-de-oliveira/" target="_blank">
-                <i class="lni lni-linkedin-original" style="font-size: xx-large;"></i>
-            </a>
-        </li>
-        <li class="ms-3 pl-2 pr-2">
-            <a href="https://github.com/marcosfragoso" style="color: black;" target="_blank">
-                <i class="lni lni-github-original" style="font-size: xx-large;"></i>
-            </a>
-        </li>
-    </ul>
-</footer>
+        <div class="nav justify-content-center pb-2 pt-2">
+            <i class="lni lni-phone text-center align-center"></i>
+            <span class="text-center align-center pl-3 ms-3">+55 (83) 9 9982-4405</span>
+        </div>
+        <div class="nav justify-content-center pb-2 pt-2">
+            <i class="lni lni-envelope text-center align-center"></i>
+            <span class="text-center align-center pl-3 ms-3">marcos.vinicius.fragoso.oliveira@ccc.ufcg.edu.br</span>
+        </div>
+        <div class="nav justify-content-center pb-2 pt-2">
+            <i class="lni lni-map-marker text-center align-center"></i>
+            <span class="text-center align-center pl-3 ms-3">Soledade, Paraíba, Brazil</span>
+        </div>
+        <ul class="nav justify-content-center list-unstyled d-flex pt-2">
+            <li class="ms-3 pl-2 pr-2">
+                <a href="https://www.instagram.com/marcosvfo_/" style="color: #E1306C;" target="_blank">
+                    <i class="lni lni-instagram" style="font-size: xx-large;"></i>
+                </a>
+            </li>
+            <li class="ms-3 pl-2 pr-2">
+                <a href="https://www.linkedin.com/in/marcos-vinicius-fragoso-de-oliveira/" target="_blank">
+                    <i class="lni lni-linkedin-original" style="font-size: xx-large;"></i>
+                </a>
+            </li>
+            <li class="ms-3 pl-2 pr-2">
+                <a href="https://github.com/marcosfragoso" style="color: black;" target="_blank">
+                    <i class="lni lni-github-original" style="font-size: xx-large;"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
 
     
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ 
 </body>
 </html>
