@@ -1,356 +1,860 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcos Vinícius</title>
+    <title>Marcos Vinícius Fragoso — Portfólio</title>
+    <meta name="description" content="Portfólio de Marcos Vinícius Fragoso — Desenvolvedor Backend & QA Engineer. Java, Python, Spring Boot, Django, Playwright.">
 
-    <!-- Ícone -->
+    
     <link rel="shortcut icon" href="./assets/img/logo.png" type="image/png">
 
-    <!-- Lineicons -->
-    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-
-    <!-- Google Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap 5.3.2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
-    <style>
-        body {
-            font-family: "Roboto Slab", serif;
-            text-align: justify;
-            background-color: #F2F3F4;
-        }
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        .card {
-            background-color: #F2F3F4;
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
         }
+    </script>
 
-        .icons-svg img{
-            width: 80px;
-            height: 80px;
-        }
-        .nav-item {
-            position: relative; 
-        }
+    
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-        .nav-item::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px; 
-            background-color: white; 
-            transition: width 0.5s ease-in-out; 
-        }
+    
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body class="bg-[#0f0f0f] text-gray-100 antialiased">
 
-        .nav-item:hover::after {
-            width: 100%;
-        }
+    
+    <nav x-data="{ open: false }"
+         class="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+
+                
+                <a href="#home" class="text-xl font-black gradient-text tracking-tight">MVF</a>
+
+                
+                <div class="hidden md:flex items-center gap-7">
+                    <a href="#about"      class="nav-link-anim text-sm text-gray-400 hover:text-white transition-colors">Sobre</a>
+                    <a href="#experience" class="nav-link-anim text-sm text-gray-400 hover:text-white transition-colors">Experiência</a>
+                    <a href="#projects"   class="nav-link-anim text-sm text-gray-400 hover:text-white transition-colors">Projetos</a>
+                    <a href="#skills"     class="nav-link-anim text-sm text-gray-400 hover:text-white transition-colors">Skills</a>
+                    <a href="#education"  class="nav-link-anim text-sm text-gray-400 hover:text-white transition-colors">Formação</a>
+                    <a href="#contact"
+                       class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-indigo-500/25">
+                        Contato
+                    </a>
+                </div>
+
+                
+                <button @click="open = !open"
+                        class="md:hidden w-9 h-9 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-bars text-lg" x-show="!open"></i>
+                    <i class="fas fa-times text-lg" x-show="open" style="display:none;"></i>
+                </button>
+            </div>
+        </div>
 
         
-        .nav-link {
-            color: white; 
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark justify-content-end" style="font-size: 1.2rem;">
-        <ul class="nav justify-content-center table-hover">
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#intro">Sobre mim</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#education">Formação Acadêmica</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#projects">Alguns projetos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#footer">Contato</a>
-            </li>
-        </ul>
+        <div x-show="open"
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-2"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-2"
+             style="display:none;"
+             class="md:hidden bg-black/95 backdrop-blur-md border-b border-white/5">
+            <div class="px-4 py-4 flex flex-col gap-1">
+                <a href="#about"      @click="open=false" class="text-gray-300 hover:text-white px-3 py-2.5 rounded-lg hover:bg-white/5 transition-colors">Sobre</a>
+                <a href="#experience" @click="open=false" class="text-gray-300 hover:text-white px-3 py-2.5 rounded-lg hover:bg-white/5 transition-colors">Experiência</a>
+                <a href="#projects"   @click="open=false" class="text-gray-300 hover:text-white px-3 py-2.5 rounded-lg hover:bg-white/5 transition-colors">Projetos</a>
+                <a href="#skills"     @click="open=false" class="text-gray-300 hover:text-white px-3 py-2.5 rounded-lg hover:bg-white/5 transition-colors">Skills</a>
+                <a href="#education"  @click="open=false" class="text-gray-300 hover:text-white px-3 py-2.5 rounded-lg hover:bg-white/5 transition-colors">Formação</a>
+                <a href="#contact"    @click="open=false" class="mt-2 text-center px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg transition-colors font-medium">Contato</a>
+            </div>
+        </div>
     </nav>
+
     
-    <section id="intro">
-        <div class="container">
-            <h2 class="card-title pb-5 pt-3 text-muted text-center">Sobre mim</h2>
-            <div class="row">
-                <div class="col-8">
-                    <p class="card-text text-justify">Sou Marcos Vinícius, graduando em Ciência da Computação pela Universidade Federal de Campina Grande (UFCG) e técnico em Informática pelo Instituto Federal da Paraíba (IFPB). Atuo como desenvolvedor de software, com experiência em desenvolvimento web full stack.
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-Participei de projetos que envolvem desde o backend com Django (Python), Spring Boot (Java) e bancos de dados PostgreSQL, até a construção de interfaces responsivas utilizando HTML, CSS, JavaScript e Bootstrap. Tenho experiência em deploy de aplicações na nuvem (Google Cloud Platform) e na implementação de funcionalidades como autenticação, controle de arquivos, gestão de permissões e filtros avançados.
+            
+            <h1 data-aos="fade-up" data-aos-delay="80" data-aos-duration="700"
+                class="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-tight mb-4">
+                Marcos Vinícius<br>
+                <span class="gradient-text">Fragoso</span>
+            </h1>
 
-Possuo certificações em metodologias ágeis, como Scrum Fundamentals, além de domínio de ferramentas de versionamento (Git) e boas práticas de desenvolvimento.</p>
-                </div>
-                <div class="col-4 text-center align-items-center">
-                    <img class="img-fluid rounded-circle" style="width: 170px; height: 170px;" src="./assets/img/perfil3.png" alt="Foto de perfil de Marcos Vinícius Fragoso de Oliveira">
-                </div>
+            
+            <div data-aos="fade-up" data-aos-delay="160" class="text-lg sm:text-xl text-gray-300 font-medium mb-3 h-7">
+                <span id="typed"></span>
+            </div>
+
+            
+            <p data-aos="fade-up" data-aos-delay="240"
+               class="text-sm text-gray-500 mb-10 flex items-center justify-center gap-3 flex-wrap">
+                <span class="flex items-center gap-1.5">
+                    <i class="fas fa-map-marker-alt text-indigo-400"></i>
+                    Soledade, Paraíba
+                </span>
+                <span class="text-gray-700">·</span>
+                <span class="flex items-center gap-1.5">
+                    <i class="fas fa-briefcase text-indigo-400"></i>
+                    Estagiário de QA @ CWI Software
+                </span>
+            </p>
+
+            
+            <div data-aos="fade-up" data-aos-delay="320"
+                 class="flex flex-wrap items-center justify-center gap-3">
+                <a href="https://github.com/marcosfragoso" target="_blank"
+                   class="flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white text-sm font-medium rounded-xl transition-all duration-300">
+                    <i class="fab fa-github text-base"></i>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/marcos-vinicius-fragoso-de-oliveira/" target="_blank"
+                   class="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium rounded-xl transition-all duration-300 shadow-lg shadow-indigo-500/25">
+                    <i class="fab fa-linkedin text-base"></i>
+                    LinkedIn
+                </a>
+                <a href="#contact"
+                   class="flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white text-sm font-medium rounded-xl transition-all duration-300">
+                    <i class="fas fa-envelope text-base"></i>
+                    Contato
+                </a>
+            </div>
+
+            
+            <div data-aos="fade-up" data-aos-delay="500" class="mt-20">
+                <a href="#about" class="inline-flex flex-col items-center gap-2 text-gray-600 hover:text-gray-400 transition-colors">
+                    <span class="text-xs tracking-wider uppercase">scroll</span>
+                    <i class="fas fa-chevron-down text-xs animate-bounce"></i>
+                </a>
             </div>
         </div>
     </section>
-    <hr>
-    <section id="education">
-        <div class="container">
-            <h2 class="card-title pb-5 pt-3 text-muted text-center">Formação Acadêmica</h2>
-            <div class="row">
-              <div class="col-sm">
-                <div class="card border-0">
-                    <div class="card-body p-0">
-                        <div class="row">
-                            <div class="col-9">
-                                <h5 class="card-title">Ciência da Computação</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Universidade Federal de Campina Grande<br>Previsão de Conclusão: 2027.</h6>
-                            </div>
-                            <div class="col-3">
-                                <img style="width: 75px; height: 75px;" src="./assets/img/ufcg.png" alt="Logo da Universidade Federal de Campina Grande">
-                            </div>
-                        </div>
-                      
-                      <p class="card-text mt-2">Atualmente, estou matriculado no curso de Bacharelado em Ciência da Computação pela Universidade Federal de Campina Grande (UFCG). O programa abrange fundamentos teóricos e aplicados em áreas como programação avançada, estruturas de dados e algoritmos, inteligência artificial, engenharia de software, sistemas distribuídos e banco de dados. A previsão de conclusão do curso é para o final de 2027.</p>
-                    </div>
-                </div>
-              </div>
-              <div class="col-sm">
-                <div class="card border-0 ">
-                    <div class="card-body p-0">
-                        <div class="row">
-                            <div class="col-9">
-                                <h5 class="card-title">Técnico em Informática</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Instituto Federal da Paraíba<br>Conclusão: 2024.</h6>
-                            </div>
-                            <div class="col-3">
-                                <img style="width: 75px; height: 75px;" src="./assets/img/ifpb.png" alt="Logo do Instituto Federal da Paraíba">
-                            </div>
-                        </div>
-                      <p class="card-text mt-2">Concluí o curso técnico em Informática no Instituto Federal da Paraíba em 2024, onde desenvolvi competências em desenvolvimento de sistemas, redes de computadores, bancos de dados e manutenção de hardware e software. A formação proporcionou uma base sólida em lógica de programação, modelagem de sistemas, suporte técnico e infraestrutura de TI.</p>
-                    </div>
-                </div>
-              </div>
-            </div>
-        </div>
-    </section>
-    <hr>
 
-    <section id="projects">
-        <div >
-            <h2 class="card-title pb-3 pt-3 text-muted text-center">Alguns Projetos</h2>
-            <div id="projectsCarousel" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel">
+    
+    <section id="about" class="py-24 bg-section-mid">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-indigo-400 uppercase tracking-[0.2em]">Sobre mim</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Quem sou eu</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+
                 
-                <!-- Indicadores -->
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="3"></button>
+                <div data-aos="fade-right" class="flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden border border-indigo-500/20 shadow-2xl shadow-indigo-500/10">
+                            <img src="./assets/img/perfil3.png"
+                                 alt="Foto de Marcos Vinícius Fragoso"
+                                 class="w-full h-full object-cover">
+                        </div>
+                        
+                        <div class="absolute -bottom-5 -right-5 w-28 h-28 bg-indigo-600/15 rounded-2xl -z-10 blur-sm"></div>
+                        <div class="absolute -top-5 -left-5 w-20 h-20 bg-violet-600/15 rounded-xl -z-10 blur-sm"></div>
+                    </div>
                 </div>
 
-                <!-- Slides -->
-                <div class="carousel-inner">
+                
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-4">Desenvolvedor Backend & QA Engineer</h3>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Atualmente atuo como <span class="text-white font-medium">Estagiário de Qualidade na CWI Software</span>,
+                        trabalhando em projetos para a <span class="text-white font-medium">The Coca-Cola Company</span>,
+                        com foco em automação e testes de software.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Tenho experiência em desenvolvimento com <span class="text-white font-medium">Java e Python</span>,
+                        nos frameworks Spring Boot e Django. Estudante de
+                        <span class="text-white font-medium">Ciência da Computação na UFCG</span>, com
+                        interesse em qualidade de software, desenvolvimento backend e engenharia de dados.
+                    </p>
 
-                    <!-- Slide 1 -->
-                    <div class="carousel-item active">
-                        <div class="p-5 rounded  w-75 mx-auto">
-                            <h3>
-                                <a class="text-decoration-none text-dark" href="https://heac.com.br/" target="_blank">
-                                    HEAC
-                                </a>
-                            </h3>
-                            <p>
-                                Desenvolvido com o intuito de otimizar o gerenciamento de arquivos em empresas e prefeituras, este sistema visa facilitar tanto a gestão atual quanto as futuras demandas. A base do sistema foi construída utilizando Django para o back-end, oferecendo robustez e flexibilidade na manipulação de dados, enquanto o front-end foi implementado com Bootstrap, proporcionando uma interface amigável e responsiva. Além disso, o deploy foi realizado na Google Cloud Platform, garantindo escalabilidade e segurança para os dados armazenados.
-                            </p>
-                        </div>
+                    <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 text-sm">
+                        <a href="mailto:fragoso.ufcg@gmail.com"
+                           class="flex items-center gap-2 text-gray-400 hover:text-indigo-400 transition-colors">
+                            <i class="fas fa-envelope text-indigo-400 w-4"></i>
+                            fragoso.ufcg@gmail.com
+                        </a>
+                        <span class="flex items-center gap-2 text-gray-400">
+                            <i class="fas fa-map-marker-alt text-indigo-400 w-4"></i>
+                            Soledade, PB — Brasil
+                        </span>
                     </div>
-
-                    <!-- Slide 2 -->
-                    <div class="carousel-item">
-                        <div class="p-5 rounded  w-75 mx-auto">
-                            <h3>
-                                <a class="text-decoration-none text-dark" href="https://github.com/marcosfragoso/bank-api" target="_blank">
-                                    API Bancária
-                                </a>
-                            </h3>
-                            <p>
-                                Este projeto é uma API bancária desenvolvida em Java com Spring Boot, que simula operações essenciais como gerenciamento de contas, autenticação e movimentações financeiras. Utiliza Docker para containerização, Apache Kafka para comunicação assíncrona, além de JPA/Hibernate para persistência e Spring Security com JWT para segurança. O sistema conta com testes automatizados (JUnit e Mockito) e serve como uma ferramenta prática para o aprendizado e aplicação dos conceitos de desenvolvimento de APIs REST seguras e escaláveis no contexto financeiro.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="carousel-item">
-                        <div class="p-5 rounded  w-75 mx-auto">
-                            <h3>
-                                <a class="text-decoration-none text-dark" href="https://github.com/marcosfragoso/suap-thymeleaf" target="_blank">
-                                    SUAP do Sertão
-                                </a>
-                            </h3>
-                            <p>
-                                Este projeto foi concebido como uma ferramenta de estudo para explorar e compreender o funcionamento de um sistema de gestão acadêmica inspirado no SUAP. Utilizando tecnologias como Java, Spring Boot, Spring Security, PostgreSQL, Thymeleaf, HTML, CSS e Bootstrap, o sistema oferece funcionalidades de autenticação e controle de acesso. A implementação visa proporcionar uma experiência prática no desenvolvimento de aplicações web completas, com foco na segurança e integração com banco de dados. A interface foi projetada com Thymeleaf e Bootstrap, criando um ambiente de aprendizado interativo e visualmente atraente.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4 -->
-                    <div class="carousel-item">
-                        <div class="p-5 rounded  w-75 mx-auto">
-                            <h3>
-                                <a class="text-decoration-none text-dark" href="https://github.com/marcosfragoso/barbersole" target="_blank">
-                                    BarberSole App
-                                </a>
-                            </h3>
-                            <p>
-                                Este projeto foi concebido como uma ferramenta de estudo para o desenvolvimento de um sistema de gestão para barbearias. Utilizando tecnologias como Java, Spring Boot, Spring Security, PostgreSQL, Thymeleaf, HTML, CSS, Bootstrap, Ajax e Highcharts, o sistema permite o gerenciamento de clientes, serviços e agendamentos. A interface foi desenvolvida com Thymeleaf e Bootstrap, proporcionando uma experiência de usuário amigável e responsiva. Com o uso de Ajax, o sistema oferece interatividade em tempo real, e os gráficos gerados pelo Highcharts fornecem visualizações detalhadas de dados, auxiliando na tomada de decisões.
-                            </p>
-                        </div>
-                    </div>
-                    
                 </div>
+            </div>
 
-                <!-- Controles -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
+            
+            <div class="grid grid-cols-3 gap-4 mt-16">
+                <div data-aos="fade-up" data-aos-delay="0" class="glass rounded-2xl p-5 sm:p-6 text-center">
+                    <div class="text-3xl sm:text-4xl font-black gradient-text mb-1">3+</div>
+                    <div class="text-xs sm:text-sm text-gray-500">Freelancers</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100" class="glass rounded-2xl p-5 sm:p-6 text-center">
+                    <div class="text-3xl sm:text-4xl font-black gradient-text mb-1">8+</div>
+                    <div class="text-xs sm:text-sm text-gray-500">Meses na CWI</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="glass rounded-2xl p-5 sm:p-6 text-center">
+                    <div class="text-3xl sm:text-4xl font-black gradient-text mb-1">2+</div>
+                    <div class="text-xs sm:text-sm text-gray-500">Anos de Monitoria</div>
+                </div>
             </div>
         </div>
     </section>
 
+    
+    <section id="experience" class="py-24 bg-section-dark">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-indigo-400 uppercase tracking-[0.2em]">Trajetória</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Experiência Profissional</h2>
+            </div>
 
-    <hr>
-    <section id="skills">
-        <div class="container">
-            <h2 class="card-title text-center pb-5 pt-3 text-muted">Skills</h2>
-            <div class="row pb-5">
-              <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/java.svg" alt="Icon Java">
+            
+            <div class="relative pl-8 border-l-2 border-indigo-500/20 space-y-8">
+
+                
+                <div data-aos="fade-up" class="relative">
+                    <div class="absolute -left-[41px] w-5 h-5 rounded-full bg-indigo-600 border-4 border-[#0f0f0f] timeline-dot-active"></div>
+                    <div class="glass rounded-2xl p-5 sm:p-6">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold">Estagiário de QA</h3>
+                                <p class="text-indigo-400 font-semibold text-sm">CWI Software</p>
+                            </div>
+                            <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full whitespace-nowrap">nov/2025 — presente</span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Atuando como QA em projetos para a <span class="text-white font-medium">The Coca-Cola Company</span>.
+                            Responsável por garantia de qualidade, automação de testes e validação de entregas em ambiente ágil.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-2.5 py-1 text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-full">Cypress</span>
+                            <span class="px-2.5 py-1 text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-full">Playwright</span>
+                            <span class="px-2.5 py-1 text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-full">Gherkin</span>
+                            <span class="px-2.5 py-1 text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-full">BDD</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/python.svg" alt="Icon Python">
+
+                
+                <div data-aos="fade-up" data-aos-delay="80" class="relative">
+                    <div class="absolute -left-[41px] w-5 h-5 rounded-full bg-violet-600 border-4 border-[#0f0f0f]"></div>
+                    <div class="glass rounded-2xl p-5 sm:p-6">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold">Crescer Level 2 — Trilha de Qualidade</h3>
+                                <p class="text-violet-400 font-semibold text-sm">CWI Software</p>
+                            </div>
+                            <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full whitespace-nowrap">ago — nov/2025</span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Programa de formação intensiva em QA: testes manuais e automatizados, CI/CD, pipelines,
+                            monitoramento e métricas. Automações com <span class="text-white font-medium">Playwright e Robot Framework</span>,
+                            além de desenvolvimento com Java/Spring Boot.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-2.5 py-1 text-xs bg-violet-500/10 text-violet-300 border border-violet-500/20 rounded-full">Playwright</span>
+                            <span class="px-2.5 py-1 text-xs bg-violet-500/10 text-violet-300 border border-violet-500/20 rounded-full">Robot Framework</span>
+                            <span class="px-2.5 py-1 text-xs bg-violet-500/10 text-violet-300 border border-violet-500/20 rounded-full">CI/CD</span>
+                            <span class="px-2.5 py-1 text-xs bg-violet-500/10 text-violet-300 border border-violet-500/20 rounded-full">Java</span>
+                            <span class="px-2.5 py-1 text-xs bg-violet-500/10 text-violet-300 border border-violet-500/20 rounded-full">Ágil</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/pgsql.svg" alt="Icon PostgreSQL">
+
+                
+                <div data-aos="fade-up" data-aos-delay="80" class="relative">
+                    <div class="absolute -left-[41px] w-5 h-5 rounded-full bg-indigo-500 border-4 border-[#0f0f0f]"></div>
+                    <div class="glass rounded-2xl p-5 sm:p-6">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold">Monitor de POO & Prog. Estruturada</h3>
+                                <p class="text-indigo-400 font-semibold text-sm">Instituto Federal da Paraíba (IFPB)</p>
+                            </div>
+                            <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full whitespace-nowrap">abr — set/2024</span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Monitoria simultânea em POO (Java) e Programação Estruturada (Python),
+                            orientando estudantes em conceitos avançados de programação orientada a objetos.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-2.5 py-1 text-xs bg-white/5 text-gray-300 border border-white/10 rounded-full">Java</span>
+                            <span class="px-2.5 py-1 text-xs bg-white/5 text-gray-300 border border-white/10 rounded-full">Python</span>
+                            <span class="px-2.5 py-1 text-xs bg-white/5 text-gray-300 border border-white/10 rounded-full">POO</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/kafka.svg" alt="Icon Apache Kafka">
+
+                
+                <div data-aos="fade-up" data-aos-delay="80" class="relative">
+                    <div class="absolute -left-[41px] w-5 h-5 rounded-full bg-indigo-500 border-4 border-[#0f0f0f]"></div>
+                    <div class="glass rounded-2xl p-5 sm:p-6">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold">Monitor de Laboratório de Programação II</h3>
+                                <p class="text-indigo-400 font-semibold text-sm">Universidade Federal de Campina Grande (UFCG)</p>
+                            </div>
+                            <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full whitespace-nowrap">fev — mai/2024</span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Monitoria em POO avançado com Java, com ênfase em padrões GRASP e design patterns.
+                            Suporte a estudantes na compreensão de arquitetura e boas práticas de desenvolvimento.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-2.5 py-1 text-xs bg-white/5 text-gray-300 border border-white/10 rounded-full">Java</span>
+                            <span class="px-2.5 py-1 text-xs bg-white/5 text-gray-300 border border-white/10 rounded-full">GRASP</span>
+                            <span class="px-2.5 py-1 text-xs bg-white/5 text-gray-300 border border-white/10 rounded-full">Design Patterns</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/docker-icon.svg" alt="Icon Docker">
+
+                
+                <div data-aos="fade-up" data-aos-delay="80" class="relative">
+                    <div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-[#0f0f0f] timeline-dot-active" style="box-shadow: 0 0 0 4px rgba(52,211,153,0.2);"></div>
+                    <div class="glass rounded-2xl p-5 sm:p-6">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold">Freelancer — DAE Soledade</h3>
+                                <p class="text-emerald-400 font-semibold text-sm">Prefeitura Municipal de Soledade, PB</p>
+                                <span class="badge-active mt-1 inline-flex">ativo</span>
+                            </div>
+                            <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full whitespace-nowrap">2024 — presente</span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Desenvolvimento e manutenção de sistema municipal para gestão e controle de estoque
+                            alimentar. Gerencia entrada e saída de alimentos distribuídos para escolas do município,
+                            controle de vencimento de produtos e geração de relatórios para a gestão pública.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-2.5 py-1 text-xs bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-full">Django</span>
+                            <span class="px-2.5 py-1 text-xs bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-full">PostgreSQL</span>
+                            <span class="px-2.5 py-1 text-xs bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-full">Python</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          <div class="row pb-5">
-            <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/html.svg" alt="Icon HTML">
+
+                
+                <div data-aos="fade-up" data-aos-delay="80" class="relative">
+                    <div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-[#0f0f0f] timeline-dot-active" style="box-shadow: 0 0 0 4px rgba(52,211,153,0.2);"></div>
+                    <div class="glass rounded-2xl p-5 sm:p-6">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold">Freelancer — Sistema HEAC</h3>
+                                <p class="text-emerald-400 font-semibold text-sm">HEAC Soluções Governamentais</p>
+                                <span class="badge-active mt-1 inline-flex">ativo</span>
+                            </div>
+                            <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full whitespace-nowrap">mai/2023 — presente</span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Desenvolvimento e manutenção contínua de sistema de gerenciamento e armazenamento
+                            de arquivos para empresa governamental, com deploy na Google Cloud Platform.
+                            Otimização do fluxo de trabalho e segurança aprimorada para a equipe.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-2.5 py-1 text-xs bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-full">Django</span>
+                            <span class="px-2.5 py-1 text-xs bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-full">PostgreSQL</span>
+                            <span class="px-2.5 py-1 text-xs bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-full">Google Cloud</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/css.svg" alt="Icon CSS">
+
+                
+                <div data-aos="fade-up" data-aos-delay="80" class="relative">
+                    <div class="absolute -left-[41px] w-5 h-5 rounded-full bg-gray-600 border-4 border-[#0f0f0f]"></div>
+                    <div class="glass rounded-2xl p-5 sm:p-6">
+                        <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+                            <div>
+                                <h3 class="text-base sm:text-lg font-bold">Monitor de Algoritmos e Lógica de Programação</h3>
+                                <p class="text-indigo-400 font-semibold text-sm">Instituto Federal da Paraíba (IFPB)</p>
+                            </div>
+                            <span class="text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full whitespace-nowrap">out/2022 — jul/2023</span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Orientação de estudantes iniciantes em lógica de programação e algoritmos,
+                            com foco na linguagem Python.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-2.5 py-1 text-xs bg-white/5 text-gray-300 border border-white/10 rounded-full">Python</span>
+                            <span class="px-2.5 py-1 text-xs bg-white/5 text-gray-300 border border-white/10 rounded-full">Algoritmos</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/bootstrap.svg" alt="Icon Bootstrap">
-                </div>
-            </div>
-            <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/nestjs.svg" alt="Icon NestJs">
-                </div>
-            </div>
-            <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/typescript.svg" alt="Icon TypeScript">
-                </div>
-            </div>
-          </div>
-        <div class="row pb-5">
-            <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/git.svg" alt="Icon Git">
-                </div>
-            </div>
-            <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/spring.svg" alt="Icon Spring">
-                </div>
-            </div>
-            <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/django.svg" alt="Icon Django">
-                </div>
-            </div>
-            <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/google-cloud.svg" alt="Icon Google Cloud">
-                </div>
-            </div>
-            <div class="col-sm d-flex justify-content-center align-items-center">
-                <div class="icons-svg">
-                    <img src="./assets/img/javascript.svg" alt="Icon JavaScript">
-                </div>
+
             </div>
         </div>
-    </div>
     </section>
 
-    <footer id="footer" class="d-flex flex-column justify-content-center align-items-center py-3 my-4 border-top">
-        <div class="nav justify-content-center pb-2 pt-2">
-            <i class="lni lni-phone text-center align-center"></i>
-            <span class="text-center align-center pl-3 ms-3">+55 (83) 9 9982-4405</span>
+    
+    <section id="projects" class="py-24 bg-section-mid">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-indigo-400 uppercase tracking-[0.2em]">Trabalhos</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Projetos em Destaque</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                
+                <div data-aos="zoom-in" data-aos-delay="0"
+                     class="glass rounded-2xl p-6 flex flex-col hover:-translate-y-1 transition-transform duration-300 group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-10 h-10 bg-indigo-500/15 rounded-xl flex items-center justify-center group-hover:bg-indigo-500/25 transition-colors">
+                            <i class="fas fa-folder-open text-indigo-400"></i>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://heac.com.br/" target="_blank"
+                               class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-indigo-400 transition-colors" title="Ver projeto">
+                                <i class="fas fa-external-link-alt text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold mb-2">HEAC — Gestão de Arquivos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
+                        Sistema de armazenamento e gerenciamento de arquivos para empresas e prefeituras,
+                        com autenticação, controle de permissões e deploy em nuvem.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Django</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">PostgreSQL</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Google Cloud</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Python</span>
+                    </div>
+                </div>
+
+                
+                <div data-aos="zoom-in" data-aos-delay="80"
+                     class="glass rounded-2xl p-6 flex flex-col hover:-translate-y-1 transition-transform duration-300 group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-10 h-10 bg-emerald-500/15 rounded-xl flex items-center justify-center group-hover:bg-emerald-500/25 transition-colors">
+                            <i class="fas fa-seedling text-emerald-400"></i>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://daesoledade.com.br/" target="_blank"
+                               class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-emerald-400 transition-colors" title="Ver projeto">
+                                <i class="fas fa-external-link-alt text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold mb-2">DAE Soledade — Gestão Alimentar</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
+                        Sistema municipal para controle de estoque alimentar. Gerencia entrada e saída
+                        de alimentos para escolas, vencimento de produtos e geração de relatórios
+                        para o município de Soledade, PB.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Django</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">PostgreSQL</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Python</span>
+                    </div>
+                </div>
+
+                
+                <div data-aos="zoom-in" data-aos-delay="160"
+                     class="glass rounded-2xl p-6 flex flex-col hover:-translate-y-1 transition-transform duration-300 group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-10 h-10 bg-violet-500/15 rounded-xl flex items-center justify-center group-hover:bg-violet-500/25 transition-colors">
+                            <i class="fas fa-landmark text-violet-400"></i>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/marcosfragoso/bank-api" target="_blank"
+                               class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-white transition-colors" title="Ver no GitHub">
+                                <i class="fab fa-github text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold mb-2">API Bancária</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
+                        Simulação de API bancária com arquitetura REST.
+                        Autenticação JWT, mensageria assíncrona com Kafka,
+                        containerização com Docker e testes automatizados com JUnit/Mockito.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Java</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Spring Boot</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Kafka</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Docker</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">JWT</span>
+                    </div>
+                </div>
+
+                
+                <div data-aos="zoom-in" data-aos-delay="0"
+                     class="glass rounded-2xl p-6 flex flex-col hover:-translate-y-1 transition-transform duration-300 group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-10 h-10 bg-blue-500/15 rounded-xl flex items-center justify-center group-hover:bg-blue-500/25 transition-colors">
+                            <i class="fas fa-graduation-cap text-blue-400"></i>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/marcosfragoso/suap-thymeleaf" target="_blank"
+                               class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-white transition-colors" title="Ver no GitHub">
+                                <i class="fab fa-github text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold mb-2">SUAP do Sertão</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
+                        Sistema de gestão acadêmica inspirado no SUAP, com controle de alunos,
+                        disciplinas, notas e autenticação segura com Spring Security.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Java</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Spring Boot</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">PostgreSQL</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Thymeleaf</span>
+                    </div>
+                </div>
+
+                
+                <div data-aos="zoom-in" data-aos-delay="80"
+                     class="glass rounded-2xl p-6 flex flex-col hover:-translate-y-1 transition-transform duration-300 group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-10 h-10 bg-orange-500/15 rounded-xl flex items-center justify-center group-hover:bg-orange-500/25 transition-colors">
+                            <i class="fas fa-cut text-orange-400"></i>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/marcosfragoso/barbersole" target="_blank"
+                               class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-white transition-colors" title="Ver no GitHub">
+                                <i class="fab fa-github text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="text-base font-bold mb-2">BarberSole App</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
+                        Sistema completo de gestão para barbearias com agendamentos, controle financeiro
+                        e dashboards interativos. Interface AJAX para experiência fluida em tempo real.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Java</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Spring Boot</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Highcharts</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">AJAX</span>
+                    </div>
+                </div>
+
+                
+                <div data-aos="zoom-in" data-aos-delay="160"
+                     class="glass rounded-2xl p-6 flex flex-col items-center justify-center text-center border-dashed hover:-translate-y-1 transition-transform duration-300 group">
+                    <div class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center mb-4 group-hover:bg-indigo-500/10 transition-colors">
+                        <i class="fab fa-github text-gray-400 group-hover:text-indigo-400 transition-colors"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-gray-300 mb-2">Mais projetos no GitHub</h3>
+                    <p class="text-gray-500 text-xs mb-4">Veja todos os repositórios públicos</p>
+                    <a href="https://github.com/marcosfragoso" target="_blank"
+                       class="px-4 py-2 text-xs bg-white/5 hover:bg-indigo-600 border border-white/10 hover:border-indigo-600 text-gray-300 hover:text-white rounded-lg transition-all duration-300">
+                        Ver GitHub →
+                    </a>
+                </div>
+
+            </div>
         </div>
-        <div class="nav justify-content-center pb-2 pt-2">
-            <i class="lni lni-envelope text-center align-center"></i>
-            <span class="text-center align-center pl-3 ms-3">marcos.vinicius.fragoso.oliveira@ccc.ufcg.edu.br</span>
+    </section>
+
+    
+    <section id="skills" class="py-24 bg-section-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-indigo-400 uppercase tracking-[0.2em]">Tecnologias</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Skills & Ferramentas</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+
+                
+                <div data-aos="fade-up" data-aos-delay="0" class="glass rounded-2xl p-6">
+                    <h3 class="text-xs font-bold text-indigo-400 uppercase tracking-[0.18em] mb-4">Backend</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-chip">
+                            <img src="./assets/img/java.svg" alt="Java" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">Java</span>
+                        </div>
+                        <div class="skill-chip">
+                            <img src="./assets/img/python.svg" alt="Python" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">Python</span>
+                        </div>
+                        <div class="skill-chip">
+                            <img src="./assets/img/spring.svg" alt="Spring Boot" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">Spring Boot</span>
+                        </div>
+                        <div class="skill-chip">
+                            <img src="./assets/img/django.svg" alt="Django" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">Django</span>
+                        </div>
+                        <div class="skill-chip">
+                            <img src="./assets/img/nestjs.svg" alt="NestJS" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">NestJS</span>
+                        </div>
+                        <div class="skill-chip">
+                            <img src="./assets/img/typescript.svg" alt="TypeScript" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div data-aos="fade-up" data-aos-delay="80" class="glass rounded-2xl p-6">
+                    <h3 class="text-xs font-bold text-violet-400 uppercase tracking-[0.18em] mb-4">Banco de Dados & DevOps</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-chip">
+                            <img src="./assets/img/pgsql.svg" alt="PostgreSQL" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">PostgreSQL</span>
+                        </div>
+                        <div class="skill-chip">
+                            <img src="./assets/img/kafka.svg" alt="Apache Kafka" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">Apache Kafka</span>
+                        </div>
+                        <div class="skill-chip">
+                            <img src="./assets/img/docker-icon.svg" alt="Docker" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">Docker</span>
+                        </div>
+                        <div class="skill-chip">
+                            <img src="./assets/img/google-cloud.svg" alt="Google Cloud" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">Google Cloud</span>
+                        </div>
+                        <div class="skill-chip">
+                            <img src="./assets/img/git.svg" alt="Git" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">Git</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div data-aos="fade-up" data-aos-delay="0" class="glass rounded-2xl p-6">
+                    <h3 class="text-xs font-bold text-emerald-400 uppercase tracking-[0.18em] mb-4">Frontend</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-chip">
+                            <img src="./assets/img/html.svg" alt="HTML" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">HTML</span>
+                        </div>
+                        <div class="skill-chip">
+                            <img src="./assets/img/css.svg" alt="CSS" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">CSS</span>
+                        </div>
+                        <div class="skill-chip">
+                            <img src="./assets/img/javascript.svg" alt="JavaScript" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">JavaScript</span>
+                        </div>
+                        <div class="skill-chip">
+                            <img src="./assets/img/bootstrap.svg" alt="Bootstrap" class="w-5 h-5">
+                            <span class="text-sm text-gray-300">Bootstrap</span>
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fab fa-css3-alt text-sky-400 text-sm w-5 text-center"></i>
+                            <span class="text-sm text-gray-300">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div data-aos="fade-up" data-aos-delay="80" class="glass rounded-2xl p-6">
+                    <h3 class="text-xs font-bold text-orange-400 uppercase tracking-[0.18em] mb-4">QA & Testes</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-chip">
+                            <i class="fas fa-vial text-orange-400 text-sm w-5 text-center"></i>
+                            <span class="text-sm text-gray-300">Cypress</span>
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fas fa-masks-theater text-orange-400 text-sm w-5 text-center"></i>
+                            <span class="text-sm text-gray-300">Playwright</span>
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fas fa-comment-dots text-orange-400 text-sm w-5 text-center"></i>
+                            <span class="text-sm text-gray-300">Gherkin / BDD</span>
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fas fa-robot text-orange-400 text-sm w-5 text-center"></i>
+                            <span class="text-sm text-gray-300">Robot Framework</span>
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fas fa-check-double text-orange-400 text-sm w-5 text-center"></i>
+                            <span class="text-sm text-gray-300">JUnit / Mockito</span>
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fas fa-tachometer-alt text-orange-400 text-sm w-5 text-center"></i>
+                            <span class="text-sm text-gray-300">JMeter</span>
+                        </div>
+                        <div class="skill-chip">
+                            <i class="fas fa-chart-line text-orange-400 text-sm w-5 text-center"></i>
+                            <span class="text-sm text-gray-300">Grafana</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="nav justify-content-center pb-2 pt-2">
-            <i class="lni lni-map-marker text-center align-center"></i>
-            <span class="text-center align-center pl-3 ms-3">Soledade, Paraíba, Brazil</span>
+    </section>
+
+    
+    <section id="education" class="py-24 bg-section-mid">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-indigo-400 uppercase tracking-[0.2em]">Acadêmico</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Formação</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
+
+                
+                <div data-aos="fade-right" class="glass rounded-2xl p-6 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden">
+                            <img src="./assets/img/ufcg.png" alt="UFCG" class="w-11 h-11 object-contain">
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-0.5">Graduação · em andamento</p>
+                            <h3 class="font-bold text-white leading-tight">Ciência da Computação</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 font-medium text-sm mb-1">Universidade Federal de Campina Grande</p>
+                    <p class="text-gray-500 text-xs flex items-center gap-1.5 mb-4">
+                        <i class="far fa-calendar-alt text-indigo-400"></i>
+                        mar/2023 — mar/2027
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 rounded-full">Algoritmos</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 rounded-full">IA</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 rounded-full">Eng. de Software</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 rounded-full">Sistemas Distribuídos</span>
+                    </div>
+                </div>
+
+                
+                <div data-aos="fade-left" class="glass rounded-2xl p-6 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden">
+                            <img src="./assets/img/ifpb.png" alt="IFPB" class="w-11 h-11 object-contain">
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-0.5">Técnico · concluído</p>
+                            <h3 class="font-bold text-white leading-tight">Técnico em Informática</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 font-medium text-sm mb-1">Instituto Federal da Paraíba</p>
+                    <p class="text-gray-500 text-xs flex items-center gap-1.5 mb-4">
+                        <i class="far fa-calendar-alt text-emerald-400"></i>
+                        mar/2022 — dez/2024
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 rounded-full">Redes</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 rounded-full">Banco de Dados</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 rounded-full">Infraestrutura</span>
+                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 rounded-full">Desenvolvimento</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <ul class="nav justify-content-center list-unstyled d-flex pt-2">
-            <li class="ms-3 pl-2 pr-2">
-                <a href="https://www.instagram.com/marcosvfo_/" style="color: #E1306C;" target="_blank">
-                    <i class="lni lni-instagram" style="font-size: xx-large;"></i>
+    </section>
+
+    
+    <section id="contact" class="py-24 bg-section-dark">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+            <div data-aos="fade-up" class="mb-12">
+                <span class="text-xs font-bold text-indigo-400 uppercase tracking-[0.2em]">Contato</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Entre em contato</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-4 mb-12">
+                <a data-aos="fade-up" data-aos-delay="0"
+                   href="mailto:fragoso.ufcg@gmail.com"
+                   class="glass rounded-2xl p-5 flex flex-col items-center gap-3 hover:-translate-y-1 transition-transform duration-300 group">
+                    <div class="w-11 h-11 bg-indigo-500/15 rounded-xl flex items-center justify-center group-hover:bg-indigo-500/25 transition-colors">
+                        <i class="fas fa-envelope text-indigo-400 text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 mb-0.5">E-mail</p>
+                        <p class="text-xs sm:text-sm text-gray-300 font-medium break-all">fragoso.ufcg@gmail.com</p>
+                    </div>
                 </a>
-            </li>
-            <li class="ms-3 pl-2 pr-2">
-                <a href="https://www.linkedin.com/in/marcos-vinicius-fragoso-de-oliveira/" target="_blank">
-                    <i class="lni lni-linkedin-original" style="font-size: xx-large;"></i>
+
+                <a data-aos="fade-up" data-aos-delay="80"
+                   href="tel:+5583999824405"
+                   class="glass rounded-2xl p-5 flex flex-col items-center gap-3 hover:-translate-y-1 transition-transform duration-300 group">
+                    <div class="w-11 h-11 bg-violet-500/15 rounded-xl flex items-center justify-center group-hover:bg-violet-500/25 transition-colors">
+                        <i class="fas fa-phone text-violet-400 text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 mb-0.5">Telefone</p>
+                        <p class="text-sm text-gray-300 font-medium">+55 (83) 99982-4405</p>
+                    </div>
                 </a>
-            </li>
-            <li class="ms-3 pl-2 pr-2">
-                <a href="https://github.com/marcosfragoso" style="color: black;" target="_blank">
-                    <i class="lni lni-github-original" style="font-size: xx-large;"></i>
+
+                <div data-aos="fade-up" data-aos-delay="160"
+                     class="glass rounded-2xl p-5 flex flex-col items-center gap-3">
+                    <div class="w-11 h-11 bg-emerald-500/15 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-map-marker-alt text-emerald-400 text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 mb-0.5">Localização</p>
+                        <p class="text-sm text-gray-300 font-medium">Soledade, PB — Brasil</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div data-aos="fade-up" class="flex justify-center gap-3">
+                <a href="https://github.com/marcosfragoso" target="_blank"
+                   class="w-11 h-11 glass rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 text-lg">
+                    <i class="fab fa-github"></i>
                 </a>
-            </li>
-        </ul>
+                <a href="https://www.linkedin.com/in/marcos-vinicius-fragoso-de-oliveira/" target="_blank"
+                   class="w-11 h-11 glass rounded-xl flex items-center justify-center text-gray-400 hover:text-[#0A66C2] hover:bg-[#0A66C2]/10 transition-all duration-300 text-lg">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://instagram.com/marcosfragoso_" target="_blank"
+                   class="w-11 h-11 glass rounded-xl flex items-center justify-center text-gray-400 hover:text-[#E1306C] hover:bg-[#E1306C]/10 transition-all duration-300 text-lg">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="py-6 border-t border-white/5 bg-[#0f0f0f]">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-xs text-gray-600">
+                © 2026 Marcos Vinícius Fragoso &nbsp;·&nbsp;
+                Feito com <span class="gradient-text font-semibold">Tailwind CSS</span>,
+                <span class="gradient-text font-semibold">Alpine.js</span> &
+                <span class="gradient-text font-semibold">AOS</span>
+            </p>
+        </div>
     </footer>
 
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
- 
+    
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="./assets/js/main.js"></script>
+
 </body>
 </html>
