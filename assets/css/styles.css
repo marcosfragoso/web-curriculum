@@ -130,3 +130,39 @@
     0%, 100% { opacity: 1; transform: scale(1); }
     50%       { opacity: 0.5; transform: scale(0.85); }
 }
+
+@media print {
+    @page { margin: 1.5cm; }
+
+    .no-print,
+    nav,
+    #home .flex.flex-wrap.items-center,
+    #contact,
+    footer,
+    [data-aos] { display: none !important; }
+
+    [data-aos] { opacity: 1 !important; transform: none !important; }
+
+    body { background: #fff !important; color: #111 !important; font-size: 11pt; }
+
+    .glass {
+        background: #f9f9f9 !important;
+        border: 1px solid #ddd !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+    }
+
+    .gradient-text {
+        -webkit-text-fill-color: #6366f1 !important;
+        background: none !important;
+    }
+
+    section { padding: 1.5rem 0 !important; break-inside: avoid; }
+
+    a { color: #6366f1 !important; text-decoration: none; }
+
+    #home { min-height: auto !important; padding-top: 1rem !important; }
+
+    .bg-section-dark,
+    .bg-section-mid { background: #fff !important; }
+}

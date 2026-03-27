@@ -6,8 +6,20 @@
     <title>Marcos Vinícius Fragoso — Portfólio</title>
     <meta name="description" content="Portfólio de Marcos Vinícius Fragoso — Desenvolvedor Backend & QA Engineer. Java, Python, Spring Boot, Django, Playwright.">
 
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://marcosfragoso.github.io/web-curriculum/">
+    <meta property="og:title"       content="Marcos Vinícius Fragoso — Portfólio">
+    <meta property="og:description" content="Desenvolvedor Backend & QA Engineer. Estagiário na CWI Software. Java, Spring Boot, Python, Django, Playwright.">
+    <meta property="og:image"       content="https://marcosfragoso.github.io/web-curriculum/assets/img/perfil3.png">
+    <meta property="og:locale"      content="pt_BR">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="Marcos Vinícius Fragoso — Portfólio">
+    <meta name="twitter:description" content="Desenvolvedor Backend & QA Engineer. Estagiário na CWI Software.">
+    <meta name="twitter:image"       content="https://marcosfragoso.github.io/web-curriculum/assets/img/perfil3.png">
+
     
-    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/png">
+    <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
 
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,6 +154,11 @@
                     <i class="fas fa-envelope text-base"></i>
                     Contato
                 </a>
+                <a href="./assets/pdf/curriculo-032026.pdf" download
+                   class="flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white text-sm font-medium rounded-xl transition-all duration-300 no-print">
+                    <i class="fas fa-download text-base"></i>
+                    Baixar CV
+                </a>
             </div>
 
             
@@ -257,6 +274,8 @@
                             <span class="px-2.5 py-1 text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-full">Playwright</span>
                             <span class="px-2.5 py-1 text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-full">Gherkin</span>
                             <span class="px-2.5 py-1 text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-full">BDD</span>
+                            <span class="px-2.5 py-1 text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-full">JMeter</span>
+                            <span class="px-2.5 py-1 text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-full">Grafana</span>
                         </div>
                     </div>
                 </div>
@@ -414,144 +433,56 @@
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-                
                 <div data-aos="zoom-in" data-aos-delay="0"
-                     class="glass rounded-2xl p-6 flex flex-col hover:-translate-y-1 transition-transform duration-300 group">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-10 h-10 bg-indigo-500/15 rounded-xl flex items-center justify-center group-hover:bg-indigo-500/25 transition-colors">
-                            <i class="fas fa-folder-open text-indigo-400"></i>
-                        </div>
-                        <div class="flex gap-2">
-                            <a href="https://heac.com.br/" target="_blank"
-                               class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-indigo-400 transition-colors" title="Ver projeto">
-                                <i class="fas fa-external-link-alt text-sm"></i>
-                            </a>
-                        </div>
+                     class="glass rounded-2xl overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300 group">
+                    <div class="relative overflow-hidden h-44">
+                        <img src="./assets/img/heac.png" alt="HEAC" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <a href="https://heac.com.br/" target="_blank"
+                           class="absolute top-3 right-3 w-8 h-8 bg-black/50 hover:bg-indigo-600 rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-all duration-200" title="Ver projeto">
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
                     </div>
-                    <h3 class="text-base font-bold mb-2">HEAC — Gestão de Arquivos</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
-                        Sistema de armazenamento e gerenciamento de arquivos para empresas e prefeituras,
-                        com autenticação, controle de permissões e deploy em nuvem.
-                    </p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Django</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">PostgreSQL</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Google Cloud</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Python</span>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-base font-bold mb-2">HEAC — Gestão de Arquivos</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
+                            Sistema de armazenamento e gerenciamento de arquivos para empresas e prefeituras,
+                            com autenticação, controle de permissões e deploy em nuvem.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/10 rounded-full">Django</span>
+                            <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/10 rounded-full">PostgreSQL</span>
+                            <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/10 rounded-full">Google Cloud</span>
+                            <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/10 rounded-full">Python</span>
+                        </div>
                     </div>
                 </div>
 
-                
                 <div data-aos="zoom-in" data-aos-delay="80"
-                     class="glass rounded-2xl p-6 flex flex-col hover:-translate-y-1 transition-transform duration-300 group">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-10 h-10 bg-emerald-500/15 rounded-xl flex items-center justify-center group-hover:bg-emerald-500/25 transition-colors">
-                            <i class="fas fa-seedling text-emerald-400"></i>
-                        </div>
-                        <div class="flex gap-2">
-                            <a href="https://daesoledade.com.br/" target="_blank"
-                               class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-emerald-400 transition-colors" title="Ver projeto">
-                                <i class="fas fa-external-link-alt text-sm"></i>
-                            </a>
-                        </div>
+                     class="glass rounded-2xl overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300 group">
+                    <div class="relative overflow-hidden h-44">
+                        <img src="./assets/img/daesoledade.png" alt="DAE Soledade" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <a href="https://daesoledade.com.br/" target="_blank"
+                           class="absolute top-3 right-3 w-8 h-8 bg-black/50 hover:bg-emerald-600 rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-all duration-200" title="Ver projeto">
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
                     </div>
-                    <h3 class="text-base font-bold mb-2">DAE Soledade — Gestão Alimentar</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
-                        Sistema municipal para controle de estoque alimentar. Gerencia entrada e saída
-                        de alimentos para escolas, vencimento de produtos e geração de relatórios
-                        para o município de Soledade, PB.
-                    </p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Django</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">PostgreSQL</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Python</span>
+                    <div class="p-5 flex flex-col flex-1">
+                        <h3 class="text-base font-bold mb-2">DAE Soledade — Gestão Alimentar</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
+                            Sistema municipal para controle de estoque alimentar. Gerencia entrada e saída
+                            de alimentos para escolas, vencimento de produtos e geração de relatórios
+                            para o município de Soledade, PB.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/10 rounded-full">Django</span>
+                            <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/10 rounded-full">PostgreSQL</span>
+                            <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/10 rounded-full">Python</span>
+                        </div>
                     </div>
                 </div>
 
-                
-                <div data-aos="zoom-in" data-aos-delay="160"
-                     class="glass rounded-2xl p-6 flex flex-col hover:-translate-y-1 transition-transform duration-300 group">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-10 h-10 bg-violet-500/15 rounded-xl flex items-center justify-center group-hover:bg-violet-500/25 transition-colors">
-                            <i class="fas fa-landmark text-violet-400"></i>
-                        </div>
-                        <div class="flex gap-2">
-                            <a href="https://github.com/marcosfragoso/bank-api" target="_blank"
-                               class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-white transition-colors" title="Ver no GitHub">
-                                <i class="fab fa-github text-sm"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold mb-2">API Bancária</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
-                        Simulação de API bancária com arquitetura REST.
-                        Autenticação JWT, mensageria assíncrona com Kafka,
-                        containerização com Docker e testes automatizados com JUnit/Mockito.
-                    </p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Java</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Spring Boot</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Kafka</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Docker</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">JWT</span>
-                    </div>
-                </div>
-
-                
-                <div data-aos="zoom-in" data-aos-delay="0"
-                     class="glass rounded-2xl p-6 flex flex-col hover:-translate-y-1 transition-transform duration-300 group">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-10 h-10 bg-blue-500/15 rounded-xl flex items-center justify-center group-hover:bg-blue-500/25 transition-colors">
-                            <i class="fas fa-graduation-cap text-blue-400"></i>
-                        </div>
-                        <div class="flex gap-2">
-                            <a href="https://github.com/marcosfragoso/suap-thymeleaf" target="_blank"
-                               class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-white transition-colors" title="Ver no GitHub">
-                                <i class="fab fa-github text-sm"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold mb-2">SUAP do Sertão</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
-                        Sistema de gestão acadêmica inspirado no SUAP, com controle de alunos,
-                        disciplinas, notas e autenticação segura com Spring Security.
-                    </p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Java</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Spring Boot</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">PostgreSQL</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Thymeleaf</span>
-                    </div>
-                </div>
-
-                
-                <div data-aos="zoom-in" data-aos-delay="80"
-                     class="glass rounded-2xl p-6 flex flex-col hover:-translate-y-1 transition-transform duration-300 group">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-10 h-10 bg-orange-500/15 rounded-xl flex items-center justify-center group-hover:bg-orange-500/25 transition-colors">
-                            <i class="fas fa-cut text-orange-400"></i>
-                        </div>
-                        <div class="flex gap-2">
-                            <a href="https://github.com/marcosfragoso/barbersole" target="_blank"
-                               class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-white transition-colors" title="Ver no GitHub">
-                                <i class="fab fa-github text-sm"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="text-base font-bold mb-2">BarberSole App</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed flex-1 mb-4">
-                        Sistema completo de gestão para barbearias com agendamentos, controle financeiro
-                        e dashboards interativos. Interface AJAX para experiência fluida em tempo real.
-                    </p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Java</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Spring Boot</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">Highcharts</span>
-                        <span class="px-2 py-0.5 text-xs bg-white/5 text-gray-400 border border-white/8 rounded-full">AJAX</span>
-                    </div>
-                </div>
-
-                
                 <div data-aos="zoom-in" data-aos-delay="160"
                      class="glass rounded-2xl p-6 flex flex-col items-center justify-center text-center border-dashed hover:-translate-y-1 transition-transform duration-300 group">
                     <div class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center mb-4 group-hover:bg-indigo-500/10 transition-colors">
